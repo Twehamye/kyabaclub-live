@@ -1,0 +1,74 @@
+<!-- members/templates/members/member_savings.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Savings</title>
+</head>
+<body>
+    <h1>Member Savings</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Member ID</th>
+                <th>Member Name</th>
+                <th>Total Savings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members_with_savings %}
+                <tr>
+                    <td>{{ member.member_id }}</td>
+                    <td>{{ member.full_name }}</td>
+                    <td>{{ member.total_savings }}/=</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Member ID</th>
+                <th>Member Name</th>
+                
+                <th>Fine Reason</th>
+                <th>Total fine</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members_with_fines %}
+                <tr>
+                    <td>{{ member.member_id }}</td>
+                    <td>{{ member.member.full_name }}</td>
+                    
+                    <td>{{ member.reason }}</td>
+                    <td>{{ member.total_savings }}/=</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Member ID</th>
+                <th>Member Name</th>
+                
+                <th>Fine Reason</th>
+                <th>Total fine</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members_with_deposits %}
+                <tr>
+                    <td>{{ member.member_id }}</td>
+                    <td>{{ member.member.full_name }}</td>
+                    
+                    <td>{{ member.reason }}</td>
+                    <td>{{ member.total_savings }}/=</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
